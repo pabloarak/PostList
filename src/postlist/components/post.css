@@ -1,0 +1,28 @@
+.post-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.post-row:first-child {
+  border-radius: 0.5rem 0.5rem 0 0;
+  background: rgba(204, 204, 204, 0.5);
+  font-weight: bold;
+  text-shadow: 0 2px 1px #fff;
+}
+
+.post-row:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+.post-cell:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+
+.post-cell {
+  padding: 1rem;
+}
+
+.post-delete-button {
+  background: red;
+  color: white;
+}
