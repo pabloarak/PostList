@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Post from "./post";
 import './list.css';
+import Header from "./header";
 
 class List extends Component {
 
@@ -9,16 +10,15 @@ class List extends Component {
   };
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("http://localhost:3000/api/posts")
       .then(response => response.json())
       .then(json => {
-
-        // create an array of contacts only with relevant data
-        const newPosts = json.map(post => {
+        // create an array of post only with relevant data
+        const newPosts = json.posts.map(post => {
           return {
             id: post.id,
-            name: post.title,
-            description: post.body
+            name: post.name,
+            description: post.description
           };
         });
 
@@ -36,15 +36,18 @@ class List extends Component {
 
   render() {
     return (
-      <div className="list">
-        <div className="post-row">
-          <div className="post-cell">Name</div>
-          <div className="post-cell">Description</div>
-          <div className="post-cell">Action</div>
+      <div>
+        <Header/>
+        <div className="list">
+          <div className="post-row">
+            <div className="post-cell">Name</div>
+            <div className="post-cell">Description</div>
+            <div className="post-cell">Action</div>
+          </div>
+          {
+            this.state.posts.map(post => <Post key={post.id} name={post.name} description={post.description}/>)
+          }
         </div>
-        {
-          this.state.posts.map(post => <Post key={post.id} name={post.name} description={post.description}/>)
-        }
       </div>
     );
   }
