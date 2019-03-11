@@ -8,7 +8,7 @@ function Post(props) {
       <div className="post-cell">{props.name}</div>
       <div className="post-cell">{props.description}</div>
       <div className="post-cell">
-        <button className="post-delete-button">Delete</button>
+        <button className="post-delete-button"><i class="fas fa-trash-alt"></i></button>
       </div>
     </div>
   );
