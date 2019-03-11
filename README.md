@@ -1,4 +1,4 @@
-# Post List Web App in ReactJS and CSS Grid
+# Post List Web App in ReactJS with CSS Grid
 
 This web app uses the REST services of Node JS from [this project](https://github.com/pabloarak/PostListRESTAPI).
 
